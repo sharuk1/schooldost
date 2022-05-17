@@ -1,0 +1,76 @@
+const mongoose = require("mongoose");
+const CourseModel = new mongoose.Schema({
+        _id:{
+            type:String
+        },
+        name:{
+            type:String
+        },
+        standard:{
+            type:String
+        },
+        syllabus:{
+            type:String
+        },
+        authorName:{
+            type:String
+        },
+        authorEmail:{
+            type:String
+        },
+        schoolID:{
+            type:String
+        },
+        title:[
+            {
+                name:{
+                    type:String
+                },
+                author:{
+                    type:String
+                },
+                _id:{
+                    type:String
+                },
+                duration:{
+                    type:Number
+                },
+                description:{
+                    type:String
+                },
+                topicList:[
+                        {
+                            name:{
+                                type:String
+                            },
+                            author:{
+                                type:String
+                            },
+                            _id:{
+                                type:String
+                            },
+                            duration:{
+                                type:Number
+                            },
+                            url:{
+                                type:String
+                            },
+                            isQuiz:{
+                                type:Boolean
+                            },
+                            testID:{
+                                type:Array
+                            },
+                            materialID:{
+                                type:Array
+                            }
+                        }
+                ]
+            }
+        ]
+})
+
+
+module.exports={ 
+    CourseModel:mongoose.model("Course", CourseModel)
+};

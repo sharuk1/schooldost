@@ -1,2 +1,0 @@
-# schooldost
-Learning Platform

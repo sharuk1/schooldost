@@ -1,0 +1,100 @@
+const mongoose = require("mongoose");
+const QuestionModel = new mongoose.Schema({
+        _id:{
+            type:String
+        },
+        type:{
+            type:String
+        },
+        status:{
+            type:String
+        },
+        uploadedOn:{
+            type:Date
+        },
+        uploadedBy:{
+            type:String
+        },
+        customProperties:{
+            std:{
+                type:String
+            },
+            unit:{
+                type:String
+            },
+            subject:{
+                type:String
+            },
+            schoolID:{
+                type:String
+            },
+            title:{
+                type:String
+            },
+            category:{
+                type:String
+            },
+            qid:{
+                type:String
+            },
+            syllabus:{
+                type:String
+            }
+        },
+        question:{
+            choice:{
+                type:Number 
+            },
+            content:{
+                type:String            
+            },
+            imgAvailable:{
+                type:Boolean
+            },
+            scannedImages:{
+                type:Array
+            },
+            
+        },
+        choices:{
+            type:Array
+        },
+        answer:{
+            choice:{
+                type:Number 
+            },
+            content:{
+                type:String            
+            },
+            imgAvailable:{
+                type:Boolean
+            }        
+        },
+        explanation:{
+            choice:{
+                type:Number 
+            },
+            content:{
+                type:String            
+            },
+            imgAvailable:{
+                type:Boolean
+            }        
+        },
+        shared:{
+            type:Boolean
+        },
+        sharedWith:{
+            type:Array
+        }
+},
+    {
+        collection:"Question"
+    }
+);
+
+
+
+module.exports={ 
+    QuestionModel:mongoose.model("Question", QuestionModel)
+};

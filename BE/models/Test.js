@@ -1,0 +1,77 @@
+const mongoose = require("mongoose");
+const TestModel = new mongoose.Schema({
+        _id:{
+            type:String
+        },
+        status:{
+            type:String
+        },
+        type:{
+            type:String
+        },
+        state:{
+            type:String
+        },
+        mode:{
+            type:String
+        },
+        startTime:{
+            type:Date
+        },
+        endTime:{
+            type:Date
+        },
+        score:{
+            type:String
+        },
+        duration:{
+            type:Number
+        },
+        markPerQuestion:{
+            type:String
+        },
+        selection:{
+            type:Map
+        },
+        customProperties:{
+            std:{
+                type:String
+            },
+            assignedBy:{
+                type:String
+            },
+            createdBy:{
+                type:String
+            },
+            subject:{
+                type:String
+            },
+            groupID:{
+                type:String
+            },
+            name:{
+                type:String
+            },
+            groupTestID:{
+                type:String
+            },
+            syllabus:{
+                type:String
+            },
+            schoolID:{
+                type:String
+            }
+        },
+        questions:{
+            type:Array
+        }
+    },
+    {
+        collection:"Test"
+    }
+);
+
+
+module.exports={ 
+    TestModel:mongoose.model("Test", TestModel)
+};

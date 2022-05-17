@@ -1,0 +1,16 @@
+const LoaderReducer = {
+
+    FETCHING: "FETCHING",
+    STOP_LOADER: "STOP_LOADER",
+    SHOW_ALERT: "SHOW_ALERT",
+    HIDE_ALERT: "HIDE_ALERT",
+    SHOW_DIALOG: "SHOW_DIALOG",
+    HIDE_DIALOG: "HIDE_DIALOG",
+    SHOW_SNACK_BAR: "SHOW_SNACK_BAR",
+    HIDE_SNACK_BAR: "HIDE_SNACK_BAR"
+}
+
+
+export {
+    LoaderReducer
+}

@@ -1,0 +1,119 @@
+const { ALLOWED, DENIED } = require("./Config");
+
+const rbacRule={
+    
+    // "/api/user/:id/:status":{
+    //         ADMIN:ALLOWED,
+    //         TEACHER:
+    // },
+    question:{
+        POST:{
+            ADMIN:ALLOWED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        UPDATE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        },
+        DELETE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        READ:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        }
+    },
+    user:{
+        POST:{
+            ADMIN:ALLOWED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        UPDATE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        },
+        DELETE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        READ:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        }
+    },
+    group:{
+        POST:{
+            ADMIN:ALLOWED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        UPDATE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+            
+        },
+        DELETE:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        READ:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        }
+    },
+    school:{
+        POST:{
+            ADMIN:DENIED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        UPDATE:{
+            ADMIN:ALLOWED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+            
+        },
+        DELETE:{
+            ADMIN:DENIED,
+            TEACHER:DENIED,
+            STUDENT:DENIED,
+            SUPERADMIN:ALLOWED
+        },
+        READ:{
+            ADMIN:ALLOWED,
+            TEACHER:ALLOWED,
+            STUDENT:ALLOWED,
+            SUPERADMIN:ALLOWED
+        }
+    },
+}
+
+module.exports={
+    RBAC_RULE:rbacRule
+}
